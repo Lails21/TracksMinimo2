@@ -16,18 +16,19 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface APIRest {
-    //We specify the url
+
+    //We specify the URL of the API
     String BASE_URL = "http://147.83.7.155:8080/dsaApp/";
 
-    //GET all tracks
+    //Get all tracks --> Función que da la lista con las diversas canciones
     @GET("tracks")
     Call<List<Track>> getAllTracks();
 
-    //Get an especific track passing its ID
+    //Get an especific track passing its id
     @GET("tracks/{id}")
     Call<Track> getTrack(@Path("id") int id);
 
-    //Create a new track
+    //Create a new track, creamos una track nueva, le pasamos BODY porque contiene (id, titulo, cantante)
     @POST("tracks")
     Call<Track> createTrack(@Body Track track);
 
@@ -35,10 +36,11 @@ public interface APIRest {
     @PUT("tracks")
     Call<Void> updateTrack(@Body Track track);
 
-    //Delete a track
+    //Delete a track --> Solo necesitamos el id del Track que queremos eliminar
     @DELETE("tracks/{id}")
     Call<Void> deleteTrack(@Path("id") int id);
 
+    // Creamos la conexión con la API
     static APIRest createAPIRest() {
         Gson gson = new GsonBuilder()
                 .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")

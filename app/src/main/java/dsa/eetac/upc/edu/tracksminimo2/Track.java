@@ -1,17 +1,20 @@
 package dsa.eetac.upc.edu.tracksminimo2;
 
 class Track {
-    //Attributes
+
+    //Atributos de la clase Track
     int id;
     String title;
     String singer;
 
+    // Constructor
     public Track(int id, String title, String singer) {
         this.id = id;
         this.title = title;
         this.singer = singer;
     }
 
+    // Setters & Getters
     public int getId() {
         return id;
     }
