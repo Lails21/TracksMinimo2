@@ -114,6 +114,7 @@ public class MainActivity extends AppCompatActivity implements SingleTrackDialog
         singleTrackDialog.show(getSupportFragmentManager(), "Single Track Dialog");
     }
 
+    // Buscamos el Track con el id que haya introducido el usuario en el Dialog
     @Override
     public void applyTexts(int id){
         getSingleTrack(id);
